@@ -1,4 +1,4 @@
-// LoadedBases - Baseball Simulator Website JavaScript
+// LOADEDBASES - Baseball Simulator Website JavaScript
 
 document.addEventListener('DOMContentLoaded', function() {
     // Mobile Menu Toggle
