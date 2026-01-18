@@ -1,5 +1,7 @@
-// Mobile Menu Toggle
+// LoadedBases - Baseball Simulator Website JavaScript
+
 document.addEventListener('DOMContentLoaded', function() {
+    // Mobile Menu Toggle
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const navLinks = document.querySelector('.nav-links');
 
@@ -23,11 +25,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const navbar = document.querySelector('.navbar');
     window.addEventListener('scroll', function() {
         if (window.scrollY > 50) {
-            navbar.style.backgroundColor = 'rgba(26, 60, 42, 0.98)';
-            navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.3)';
+            navbar.style.backgroundColor = 'rgba(0, 0, 0, 0.98)';
         } else {
-            navbar.style.backgroundColor = '';
-            navbar.style.boxShadow = '';
+            navbar.style.backgroundColor = 'rgba(0, 0, 0, 0.95)';
         }
     });
 
@@ -35,9 +35,12 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+
+            const target = document.querySelector(targetId);
             if (target) {
-                const headerOffset = 60;
+                const headerOffset = 70;
                 const elementPosition = target.getBoundingClientRect().top;
                 const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
@@ -55,23 +58,17 @@ document.addEventListener('DOMContentLoaded', function() {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
 
-            // Get form data
-            const formData = new FormData(contactForm);
             const name = contactForm.querySelector('input[type="text"]').value;
             const email = contactForm.querySelector('input[type="email"]').value;
-            const phone = contactForm.querySelector('input[type="tel"]').value;
-            const message = contactForm.querySelector('textarea').value;
 
             // Here you would typically send the data to a server
-            // For now, we'll just show an alert
-            alert(`Thank you, ${name}! Your message has been received. We'll get back to you soon at ${email}.`);
+            alert(`Thanks ${name}! We'll be in touch at ${email} soon.`);
 
-            // Reset form
             contactForm.reset();
         });
     }
 
-    // Animate elements on scroll
+    // Intersection Observer for section animations
     const observerOptions = {
         root: null,
         rootMargin: '0px',
@@ -86,29 +83,21 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, observerOptions);
 
-    // Observe sections for animation
+    // Observe all sections for animation
     document.querySelectorAll('.section').forEach(section => {
         observer.observe(section);
     });
+
+    // Add subtle parallax effect to hero stats
+    const heroStats = document.querySelector('.hero-stats');
+    if (heroStats) {
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const rate = scrolled * 0.3;
+            if (scrolled < window.innerHeight) {
+                heroStats.style.transform = `translateY(${rate}px)`;
+                heroStats.style.opacity = 1 - (scrolled / window.innerHeight);
+            }
+        });
+    }
 });
-
-// Add CSS for animations dynamically
-const style = document.createElement('style');
-style.textContent = `
-    .section {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-
-    .section.animate-in {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    .hero {
-        opacity: 1 !important;
-        transform: none !important;
-    }
-`;
-document.head.appendChild(style);
