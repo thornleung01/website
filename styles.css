@@ -105,6 +105,7 @@ ul {
 .nav-links {
     display: flex;
     gap: 40px;
+    align-items: center;
 }
 
 .nav-links a {
@@ -118,6 +119,84 @@ ul {
 
 .nav-links a:hover {
     color: var(--white);
+}
+
+/* Nav Dropdown */
+.nav-dropdown {
+    position: relative;
+}
+
+.nav-dropdown-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--gray-light);
+    font-size: 0.85rem;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0;
+}
+
+.nav-dropdown-btn:hover {
+    color: var(--white);
+}
+
+.dropdown-arrow {
+    width: 10px;
+    height: 7px;
+    color: inherit;
+    transition: transform 0.25s ease;
+}
+
+.nav-dropdown:hover .dropdown-arrow,
+.nav-dropdown.open .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: calc(100% + 16px);
+    left: 50%;
+    transform: translateX(-50%) translateY(-6px);
+    min-width: 200px;
+    background-color: rgba(5, 5, 5, 0.98);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 8px 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    backdrop-filter: blur(10px);
+}
+
+.nav-dropdown:hover .dropdown-menu,
+.nav-dropdown.open .dropdown-menu {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 11px 24px;
+    color: var(--gray-light);
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.dropdown-menu li a:hover {
+    color: var(--white);
+    background-color: var(--black-card);
 }
 
 .btn-book-nav {
@@ -470,6 +549,99 @@ ul {
     line-height: 1.7;
 }
 
+/* Coaching Section */
+.coaching-section {
+    background-color: var(--black);
+    border-top: 1px solid var(--border);
+}
+
+.section-cta {
+    margin-top: 56px;
+    text-align: center;
+}
+
+/* Parties & Events Section */
+.parties-section {
+    background-color: var(--black-soft);
+    border-top: 1px solid var(--border);
+}
+
+.parties-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+}
+
+.parties-card {
+    background-color: var(--black-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 48px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    transition: all 0.3s ease;
+}
+
+.parties-card:hover {
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-4px);
+}
+
+.parties-card-icon {
+    width: 56px;
+    height: 56px;
+}
+
+.parties-card-icon svg {
+    width: 100%;
+    height: 100%;
+    stroke: var(--white);
+}
+
+.parties-card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    flex-grow: 1;
+}
+
+.parties-card-content h3 {
+    font-size: 2rem;
+    color: var(--white);
+    letter-spacing: 0.02em;
+    line-height: 1.1;
+}
+
+.parties-card-content > p {
+    color: var(--gray-light);
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+.parties-perks {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 4px;
+    flex-grow: 1;
+}
+
+.parties-perks li {
+    color: var(--gray-light);
+    font-size: 0.9rem;
+    padding-left: 20px;
+    position: relative;
+}
+
+.parties-perks li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--white);
+    font-size: 0.8rem;
+}
+
 /* Rates Section */
 .pricing-section {
     background-color: var(--black);
@@ -568,6 +740,161 @@ ul {
     font-size: 0.9rem;
 }
 
+/* Membership Section */
+.membership-section {
+    background-color: var(--black-soft);
+    border-top: 1px solid var(--border);
+}
+
+.section-subtitle {
+    color: var(--gray-light);
+    font-size: 1rem;
+    margin-top: 16px;
+}
+
+.membership-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    align-items: start;
+}
+
+.membership-card {
+    position: relative;
+    padding: 48px 36px;
+    background-color: var(--black-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    transition: all 0.3s ease;
+}
+
+.membership-card:hover {
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-4px);
+}
+
+.membership-card--featured {
+    border-color: var(--white);
+}
+
+.membership-card--featured:hover {
+    border-color: var(--white);
+}
+
+.membership-badge {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--white);
+    color: var(--black);
+    padding: 4px 20px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    border-radius: 20px;
+    white-space: nowrap;
+}
+
+.membership-header {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.membership-tag {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--gray-light);
+}
+
+.membership-header h3 {
+    font-size: 1.8rem;
+    color: var(--white);
+    letter-spacing: 0.02em;
+}
+
+.membership-header p {
+    color: var(--gray-light);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.membership-price {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+}
+
+.membership-price .price-amount {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3.5rem;
+    color: var(--white);
+    letter-spacing: 0.02em;
+}
+
+.membership-price .price-unit {
+    font-size: 1rem;
+    color: var(--gray-light);
+}
+
+/* Bundles table */
+.membership-bundles {
+    margin-bottom: 80px;
+}
+
+.membership-plans {
+    margin-top: 0;
+}
+
+.membership-subheading {
+    font-size: 0.75rem;
+    color: var(--gray-light);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: 32px;
+}
+
+.bundles-table-container {
+    max-width: 600px;
+    margin: 0 auto;
+    overflow-x: auto;
+}
+
+/* Membership perks list */
+.membership-perks {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex-grow: 1;
+}
+
+.membership-perks li {
+    color: var(--gray-light);
+    font-size: 0.9rem;
+    padding-left: 20px;
+    position: relative;
+}
+
+.membership-perks li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--white);
+    font-size: 0.8rem;
+}
+
+.btn-full {
+    width: 100%;
+    text-align: center;
+}
+
 /* Contact Section */
 .contact-section {
     background-color: var(--black);
@@ -576,16 +903,25 @@ ul {
 
 .contact-content {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    max-width: 1000px;
+    grid-template-columns: 1.5fr 1fr 1.5fr;
+    gap: 48px;
+    max-width: 1100px;
     margin: 0 auto;
+    align-items: stretch;
 }
 
-.contact-info {
+.contact-map {
+    min-height: 280px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.contact-details {
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 32px;
+    justify-content: space-between;
 }
 
 .contact-item h4 {
@@ -752,6 +1088,16 @@ ul {
     .experience-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .membership-grid {
+        grid-template-columns: 1fr;
+        max-width: 480px;
+        margin: 0 auto;
+    }
+
+    .parties-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 640px) {
@@ -799,6 +1145,45 @@ ul {
 
     .nav-links.active {
         display: flex;
+    }
+
+    /* Mobile dropdown */
+    .nav-dropdown-btn {
+        justify-content: center;
+        width: 100%;
+        color: var(--gray-light);
+        font-size: 0.85rem;
+    }
+
+    .dropdown-menu {
+        position: static;
+        transform: none !important;
+        opacity: 1;
+        pointer-events: auto;
+        background: none;
+        border: none;
+        padding: 0;
+        backdrop-filter: none;
+        display: none;
+        min-width: unset;
+    }
+
+    .nav-dropdown.open .dropdown-menu {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .dropdown-menu li a {
+        padding: 8px 0;
+        text-align: center;
+        font-size: 0.8rem;
+        color: var(--gray-light);
+    }
+
+    .dropdown-menu li a:hover {
+        background: none;
+        color: var(--white);
     }
 
     .btn-book-nav {

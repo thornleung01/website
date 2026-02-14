@@ -21,6 +21,31 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // Dropdown toggle (click for mobile, hover handled by CSS for desktop)
+    const dropdowns = document.querySelectorAll('.nav-dropdown');
+    dropdowns.forEach(dropdown => {
+        const btn = dropdown.querySelector('.nav-dropdown-btn');
+        btn.addEventListener('click', function() {
+            const isOpen = dropdown.classList.contains('open');
+            dropdowns.forEach(d => d.classList.remove('open'));
+            if (!isOpen) {
+                dropdown.classList.add('open');
+            }
+            btn.setAttribute('aria-expanded', !isOpen);
+        });
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.nav-dropdown')) {
+            dropdowns.forEach(d => {
+                d.classList.remove('open');
+                const btn = d.querySelector('.nav-dropdown-btn');
+                if (btn) btn.setAttribute('aria-expanded', 'false');
+            });
+        }
+    });
+
     // Navbar background on scroll
     const navbar = document.querySelector('.navbar');
     window.addEventListener('scroll', function() {

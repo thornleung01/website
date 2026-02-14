@@ -22,8 +22,21 @@
             </a>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
+                <li class="nav-dropdown">
+                    <button class="nav-dropdown-btn" aria-expanded="false">
+                        Experience
+                        <svg class="dropdown-arrow" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 1L6 7L11 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#experience">Experience</a></li>
+                        <li><a href="#coaching">Coaching</a></li>
+                        <li><a href="#parties">Events</a></li>
+                    </ul>
+                </li>
                 <li><a href="#rates">Rates</a></li>
+                <li><a href="#membership">Membership</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <a href="#book" class="btn-book-nav">Book Now</a>
@@ -204,6 +217,140 @@
         </div>
     </section>
 
+    <!-- Coaching Section -->
+    <section id="coaching" class="section coaching-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Coaching</span>
+                <h2 class="section-title">SHARPEN YOUR EDGE</h2>
+                <p class="section-subtitle">Work with experienced coaches using real-time data to accelerate your development.</p>
+            </div>
+            <div class="experience-grid">
+                <div class="experience-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="8" r="4"/>
+                            <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+                        </svg>
+                    </div>
+                    <h3>Private Lessons</h3>
+                    <p>One-on-one sessions with a coach focused entirely on your mechanics, swing path, and performance goals.</p>
+                </div>
+                <div class="experience-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                    </div>
+                    <h3>Small Group Training</h3>
+                    <p>Train alongside teammates or friends in small groups of 2–4. Compete, compare, and level up together.</p>
+                </div>
+                <div class="experience-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="2" y="3" width="20" height="14" rx="2"/>
+                            <path d="M8 21h8M12 17v4"/>
+                            <path d="M7 9l3 3-3 3M12 15h5"/>
+                        </svg>
+                    </div>
+                    <h3>Video & Analytics Review</h3>
+                    <p>Deep-dive sessions breaking down your exit velocity, launch angle, and swing metrics with frame-by-frame analysis.</p>
+                </div>
+                <div class="experience-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                            <path d="M2 17l10 5 10-5"/>
+                            <path d="M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <h3>Season Prep Programs</h3>
+                    <p>Structured multi-week programs designed to peak your performance heading into tryouts or game season.</p>
+                </div>
+                <div class="experience-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 6v6l4 2"/>
+                        </svg>
+                    </div>
+                    <h3>Youth Development</h3>
+                    <p>Age-appropriate coaching for youth players building fundamentals, confidence, and a love for the game.</p>
+                </div>
+                <div class="experience-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                    </div>
+                    <h3>Elite Performance Track</h3>
+                    <p>For serious competitive players. Advanced coaching with benchmarking against measurable performance milestones.</p>
+                </div>
+            </div>
+            <div class="section-cta">
+                <a href="#contact" class="btn btn-primary">Book a Coaching Session</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Parties & Corporate Events Section -->
+    <section id="parties" class="section parties-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Events</span>
+                <h2 class="section-title">BRING YOUR CREW</h2>
+                <p class="section-subtitle">Private events, birthday parties, and corporate experiences—LoadedBases style.</p>
+            </div>
+            <div class="parties-grid">
+                <div class="parties-card">
+                    <div class="parties-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M20 7H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/>
+                            <path d="M16 3l-4 4-4-4"/>
+                            <path d="M12 7v8M8 13l4 4 4-4"/>
+                        </svg>
+                    </div>
+                    <div class="parties-card-content">
+                        <span class="section-tag">Birthday Parties</span>
+                        <h3>Make It A Day To Remember</h3>
+                        <p>Celebrate your birthday with a private bay, exclusive access, and a full simulator experience. Perfect for kids and adults alike—no experience required.</p>
+                        <ul class="parties-perks">
+                            <li>Private bay reservation</li>
+                            <li>Up to 10 guests</li>
+                            <li>Equipment provided</li>
+                            <li>Flexible time slots</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-outline">Plan Your Party</a>
+                    </div>
+                </div>
+                <div class="parties-card">
+                    <div class="parties-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="2" y="7" width="20" height="14" rx="2"/>
+                            <path d="M16 3H8a2 2 0 0 0-2 2v2h12V5a2 2 0 0 0-2-2z"/>
+                            <path d="M12 12v4M10 14h4"/>
+                        </svg>
+                    </div>
+                    <div class="parties-card-content">
+                        <span class="section-tag">Corporate Events</span>
+                        <h3>Team Building That Actually Works</h3>
+                        <p>Bring your team together for a one-of-a-kind competitive experience. Book multiple bays, run a company tournament, and build culture on the diamond.</p>
+                        <ul class="parties-perks">
+                            <li>Multi-bay buyouts available</li>
+                            <li>Custom tournament format</li>
+                            <li>Leaderboard & prizes</li>
+                            <li>Catering coordination available</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-outline">Plan Your Event</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Rates Section -->
     <section id="rates" class="section pricing-section">
         <div class="container">
@@ -255,6 +402,129 @@
         </div>
     </section>
 
+    <!-- Membership Section -->
+    <section id="membership" class="section membership-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Memberships</span>
+                <h2 class="section-title">COMMIT TO YOUR GAME</h2>
+                <p class="section-subtitle">Save more, play more. Choose the plan that fits your grind.</p>
+            </div>
+            <!-- Hour Bundles -->
+            <div class="membership-bundles">
+                <h3 class="membership-subheading">Hour Bundles</h3>
+                <div class="bundles-table-container">
+                    <table class="rates-table">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>
+                                    <span class="rate-period">5-Hour Pack</span>
+                                </th>
+                                <th>
+                                    <span class="rate-period">10-Hour Pack</span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="rate-label">Hours</td>
+                                <td class="rate-price">
+                                    <span class="price-amount">XX</span>
+                                    <span class="price-unit">hrs</span>
+                                </td>
+                                <td class="rate-price">
+                                    <span class="price-amount">XX</span>
+                                    <span class="price-unit">hrs</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="rate-label">Price</td>
+                                <td class="rate-price">
+                                    <span class="price-amount">$XX</span>
+                                </td>
+                                <td class="rate-price">
+                                    <span class="price-amount">$XX</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="rates-note">
+                    <p>Hours never expire. Use during any time slot. Share with teammates.</p>
+                </div>
+            </div>
+
+            <!-- Unlimited Plans -->
+            <div class="membership-plans">
+                <h3 class="membership-subheading">Unlimited Plans</h3>
+                <div class="membership-grid">
+
+                    <!-- Weekly -->
+                    <div class="membership-card">
+                        <div class="membership-header">
+                            <span class="membership-tag">Weekly</span>
+                            <h3>Unlimited Access</h3>
+                            <p>Unlimited bay time for a full week</p>
+                        </div>
+                        <div class="membership-price">
+                            <span class="price-amount">$XX</span>
+                            <span class="price-unit">/wk</span>
+                        </div>
+                        <ul class="membership-perks">
+                            <li>Unlimited bay time</li>
+                            <li>7-day access</li>
+                            <li>No commitment</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-outline btn-full">Join Weekly</a>
+                    </div>
+
+                    <!-- Monthly -->
+                    <div class="membership-card">
+                        <div class="membership-header">
+                            <span class="membership-tag">Monthly</span>
+                            <h3>Unlimited Access</h3>
+                            <p>Unlimited bay time, billed monthly</p>
+                        </div>
+                        <div class="membership-price">
+                            <span class="price-amount">$XX</span>
+                            <span class="price-unit">/mo</span>
+                        </div>
+                        <ul class="membership-perks">
+                            <li>Unlimited bay time</li>
+                            <li>Priority booking</li>
+                            <li>Cancel anytime</li>
+                            <li>Member-only hours</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-outline btn-full">Join Monthly</a>
+                    </div>
+
+                    <!-- Annual -->
+                    <div class="membership-card membership-card--featured">
+                        <div class="membership-badge">Best Value</div>
+                        <div class="membership-header">
+                            <span class="membership-tag">Annual</span>
+                            <h3>Unlimited Access</h3>
+                            <p>Unlimited bay time, billed yearly</p>
+                        </div>
+                        <div class="membership-price">
+                            <span class="price-amount">$XX</span>
+                            <span class="price-unit">/yr</span>
+                        </div>
+                        <ul class="membership-perks">
+                            <li>Everything in Monthly</li>
+                            <li>2 months free vs monthly</li>
+                            <li>2 guest passes per month</li>
+                            <li>Exclusive member events</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-primary btn-full">Join Annual</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="section contact-section">
         <div class="container">
@@ -263,7 +533,21 @@
                 <h2 class="section-title">GET IN TOUCH</h2>
             </div>
             <div class="contact-content">
-                <div class="contact-info">
+                <!-- Replace the src below with your Google Maps embed URL:
+                     Google Maps → Share → Embed a map → Copy HTML, grab the src value -->
+                <div class="contact-map">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1000!2d-73.935242!3d40.730610!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zTG9hZGVkQmFzZXM!5e0!3m2!1sen!2sus!4v0"
+                        width="100%"
+                        height="100%"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="LOADEDBASES location">
+                    </iframe>
+                </div>
+                <div class="contact-details">
                     <div class="contact-item">
                         <h4>Location</h4>
                         <p>456 Diamond Drive<br>Baseball City, BC 54321</p>
@@ -312,7 +596,10 @@
                 <div class="footer-links">
                     <a href="#about">About</a>
                     <a href="#experience">Experience</a>
+                    <a href="#coaching">Coaching</a>
+                    <a href="#parties">Parties & Events</a>
                     <a href="#rates">Rates</a>
+                    <a href="#membership">Membership</a>
                     <a href="#contact">Contact</a>
                 </div>
                 <div class="footer-social">
