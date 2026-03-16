@@ -46,15 +46,23 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Navbar background on scroll
+    // Navbar scroll effect - subtle border glow on scroll
     const navbar = document.querySelector('.navbar');
+    let lastScroll = 0;
+
     window.addEventListener('scroll', function() {
-        if (window.scrollY > 50) {
-            navbar.style.backgroundColor = 'rgba(0, 0, 0, 0.98)';
+        const scrollY = window.scrollY;
+
+        if (scrollY > 50) {
+            navbar.style.backgroundColor = 'rgba(0, 0, 0, 0.97)';
+            navbar.style.borderBottomColor = 'rgba(255, 255, 255, 0.12)';
         } else {
-            navbar.style.backgroundColor = 'rgba(0, 0, 0, 0.95)';
+            navbar.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
+            navbar.style.borderBottomColor = 'rgba(255, 255, 255, 0.07)';
         }
-    });
+
+        lastScroll = scrollY;
+    }, { passive: true });
 
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -65,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             const target = document.querySelector(targetId);
             if (target) {
-                const headerOffset = 70;
+                const headerOffset = 72;
                 const elementPosition = target.getBoundingClientRect().top;
                 const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
@@ -86,7 +94,6 @@ document.addEventListener('DOMContentLoaded', function() {
             const name = contactForm.querySelector('input[type="text"]').value;
             const email = contactForm.querySelector('input[type="email"]').value;
 
-            // Here you would typically send the data to a server
             alert(`Thanks ${name}! We'll be in touch at ${email} soon.`);
 
             contactForm.reset();
@@ -96,8 +103,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Intersection Observer for section animations
     const observerOptions = {
         root: null,
-        rootMargin: '0px',
-        threshold: 0.1
+        rootMargin: '0px 0px -60px 0px',
+        threshold: 0.08
     };
 
     const observer = new IntersectionObserver(function(entries) {
@@ -113,16 +120,19 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(section);
     });
 
-    // Add subtle parallax effect to hero stats
+    // Subtle parallax effect on hero
     const heroStats = document.querySelector('.hero-stats');
-    if (heroStats) {
+    const heroContent = document.querySelector('.hero-content');
+
+    if (heroContent) {
         window.addEventListener('scroll', function() {
             const scrolled = window.pageYOffset;
-            const rate = scrolled * 0.3;
             if (scrolled < window.innerHeight) {
-                heroStats.style.transform = `translateY(${rate}px)`;
-                heroStats.style.opacity = 1 - (scrolled / window.innerHeight);
+                const rate = scrolled * 0.15;
+                const opacity = 1 - (scrolled / (window.innerHeight * 0.8));
+                heroContent.style.transform = `translateY(${rate}px)`;
+                heroContent.style.opacity = Math.max(0, opacity);
             }
-        });
+        }, { passive: true });
     }
 });
